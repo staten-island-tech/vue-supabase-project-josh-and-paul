@@ -36,7 +36,7 @@ async function signUp() {
       </form>
       <p>
         Already have an account? 
-        <router-link to="/sign-in">Log in</router-link>
+        <router-link to="/about">Log in</router-link>
       </p>
     </div>
 </template>
