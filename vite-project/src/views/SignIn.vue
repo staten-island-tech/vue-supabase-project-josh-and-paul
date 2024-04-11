@@ -1,7 +1,18 @@
+<script>
+import { supabase } from '../lib/supabaseClient'
+import {ref} from 'vue'
+async function signInWithEmail() {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: 'example@email.com',
+    password: 'example-password',
+  })
+}
+
+</script>
 <template>
   <div>
       <h1>Login Page</h1>
-      <form @submit.prevent="signIn">
+      <form @submit.prevent="signInWithPassword">
         <input
           class="inputField"
           type="email"
