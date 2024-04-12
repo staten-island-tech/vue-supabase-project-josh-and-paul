@@ -29,7 +29,7 @@ async function signInWithEmail() {
       </form>
       <p>
         Don't have an account? 
-        <router-link to="/sign-up">Sign Up</router-link>
+        <router-link to="/">Sign Up</router-link>
       </p>
     </div>
 </template>
