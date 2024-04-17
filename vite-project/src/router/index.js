@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/SignUp.vue'
 import MapSelect from '@/views/MapSelect.vue'
+import FreshWater from '@/views/FreshWater.vue'
+import InShore from '@/views/InShore.vue'
+import OffShore from '@/views/OffShore.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,7 +25,23 @@ const router = createRouter({
       path: '/map',
       name: 'map',
       component: MapSelect
-    }
+    },
+    {
+      path: '/freshwater',
+      name: 'freshwater',
+      component: FreshWater,
+    },
+    {
+      path: '/inshore',
+      name: 'inshore',
+      component: InShore,
+    },
+    {
+      path: '/offshore',
+      name: 'offshore',
+      component: OffShore,
+    },
+
   ]
 })
 
