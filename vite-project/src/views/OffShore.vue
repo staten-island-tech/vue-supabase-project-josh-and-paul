@@ -4,9 +4,7 @@ import { RouterLink} from 'vue-router'
 </script>
 <template>
     <div class="location3">
-        <RouterLink class="freshwater" to="/freshwater">Freshwater Fishing</RouterLink>
-        <RouterLink class="inshore" to="/inshore">Inshore Saltwater Fishing</RouterLink>
-        <RouterLink class="offshore" to="/offshore">Offshore Saltwater Fishing</RouterLink>
+        <RouterLink class="backto" to="/map">Back to Map</RouterLink>
     </div>
 </template>
 <style>
@@ -15,5 +13,6 @@ import { RouterLink} from 'vue-router'
     height: 100vh;
     object-fit: contain;
     background-image: url("../assets/offshore.png");
+    background-size: 100%;
 }
 </style>
