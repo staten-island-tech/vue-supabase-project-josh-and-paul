@@ -30,7 +30,7 @@ margin-top: 60vh;
 margin-left: 65vw;
 }
 #offshore{
-margin-top: 60vh;
-margin-left: 70vw;
+margin-top: 3vh;
+margin-left: 90vw;
 }
 </style>
