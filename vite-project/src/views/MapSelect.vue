@@ -1,9 +1,10 @@
 <script setup>
+import router from '@/router/index';
 </script>
 <template>
     <div class="map">
         <div id="freshwater">
-        <button to="/freshwater">Freshwater Fishing</button>
+        <button @click="router.push('/freshwater')">Freshwater Fishing</button>
         </div>
         <div id="inshore">
         <button to="/inshore">Inshore Saltwater Fishing</button>
@@ -30,7 +31,6 @@ margin-top: 60vh;
 margin-left: 65vw;
 }
 #offshore{
-margin-top: 3vh;
 margin-left: 90vw;
 }
 </style>
