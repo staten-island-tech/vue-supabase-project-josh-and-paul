@@ -7,10 +7,10 @@ import router from '@/router/index';
         <button @click="router.push('/freshwater')">Freshwater Fishing</button>
         </div>
         <div id="inshore">
-        <button to="/inshore">Inshore Saltwater Fishing</button>
+            <button @click="router.push('/inshore')">Inshore Fishing</button>        
         </div>
         <div id="offshore">
-        <button to="/offshore">Offshore Saltwater Fishing</button>
+            <button @click="router.push('/offshore')">Offshore Fishing</button>        
         </div>
     </div>
 </template>
