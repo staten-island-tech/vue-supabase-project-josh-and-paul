@@ -10,14 +10,14 @@ async function getCountries() {
 }
 
 onMounted(() => {
-  getCountries()
-})
+/*   getCountries()
+ */})
 </script>
 
 <template>
-  <ul>
+<!--   <ul>
     <li v-for="country in countries" :key="country.id">{{ country.name }}</li>
-  </ul>
+  </ul> -->
   <header>
     <div class="wrapper">
       
