@@ -33,7 +33,12 @@ function catchFish(){
                 <h2>Rarity: {{ caughtFish.rarity }}</h2>
                 <h2>Weight: {{ caughtFish.weight }}lbs</h2>
                 <h2>Value: ${{ caughtFish.value }}</h2>
-                <img :src= "caughtFish.img"/>
+            </div>
+            <div class="ident">               
+            <img :src= "caughtFish.img"/>
+            </div> 
+            <div>
+                <img src="@/assets/images/catching.png"/>
             </div>
         </div>
     </div>
@@ -62,12 +67,16 @@ function catchFish(){
     font-size: 50px;
 }
 .info{
-    padding-left: 30vw;
+    padding-left: 10vw;
     justify-self: center;
+    font-size: 27px;
     
 }
 img {
-    width: 550px;
-    height: 275px;
+    width: 650px;
+    height: 325px;
+}
+.ident{
+    padding-left: 15vw;
 }
 </style>
