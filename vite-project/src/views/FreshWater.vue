@@ -29,10 +29,10 @@ function catchFish(){
         <div class="interface">        
             <button class="catch" @click="catchFish">Catch Fish</button>
             <div class="info">
-                Species: {{ caughtFish.species }}
-                Rarity: {{ caughtFish.rarity }}
-                Weight: {{ caughtFish.weight }}lbs
-                Value: ${{ caughtFish.value }}
+                <h2>Species: {{ caughtFish.species }}</h2>
+                <h2>Rarity: {{ caughtFish.rarity }}</h2>
+                <h2>Weight: {{ caughtFish.weight }}lbs</h2>
+                <h2>Value: ${{ caughtFish.value }}</h2>
                 <img :src= "caughtFish.img"/>
             </div>
         </div>
@@ -62,6 +62,12 @@ function catchFish(){
     font-size: 50px;
 }
 .info{
-    padding-left: 60px;
+    padding-left: 30vw;
+    justify-self: center;
+    
+}
+img {
+    width: 550px;
+    height: 275px;
 }
 </style>
