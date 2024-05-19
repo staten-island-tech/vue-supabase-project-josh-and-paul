@@ -15,12 +15,42 @@ const freshwater_array = [
     {"species": "Muskellunge", "rarity": "Extremely Rare", "weight": 30.0, "value": 50.0, img:"https://th.bing.com/th/id/OIP.oEIg3R4BxzDBdRAgtNzMjgHaFj?rs=1&pid=ImgDetMain"},
     {"species": "Sturgeon", "rarity": "Extremely Rare", "weight": 150.0, "value": 100.0, img:"https://th.bing.com/th/id/R.31a50f20cc1f24861096528f69519e04?rik=DOiup4MHGvXaaQ&riu=http%3a%2f%2fwww.partnershipforcoastalwatersheds.org%2fwordpress%2fwp-content%2fuploads%2f2015%2f10%2fsPicture2.png&ehk=sa6NZ4skWY2%2fXmUoFLVi8L0Ja6rchamufwsLurNUBGE%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"}
 ];
+const likelihoods = {
+'Extremely Rare': 1,
+'Very Rare': 2,
+'Rare': 3,
+'Uncommon': 4,
+'Common': 5,
+}
 const caughtFish = ref({})
+const position = ref()
+position.value = new URL(`../assets/sitting.png`, import.meta.url).href;
 function catchFish(){
+    let total = freshwater_array.reduce((acc, fish) => acc + likelihoods[fish.rarity], 0);
+    let threshold = Math.random() * total;
+    /* const randomIndex = Math.floor(Math.random() * freshwater_array.length); 
+    const randomFish = freshwater_array[randomIndex];  */
+    for (let fish of freshwater_array) {
+
+threshold -= likelihoods[fish.rarity];
+if (threshold < 0) {
+    caughtFish.value = fish;
+}
+}
+    position.value = new URL(`../assets/catching.png`, import.meta.url).href;
+    setTimeout(() => {
+        position.value = new URL(`../assets/sitting.png`, import.meta.url).href;
+    },4000)
+}
+/* function catchFish(){
     const randomIndex = Math.floor(Math.random() * freshwater_array.length); 
     const randomFish = freshwater_array[randomIndex]; 
     caughtFish.value = randomFish;
-}
+    position.value = new URL(`../assets/catching.png`, import.meta.url).href;
+    setTimeout(() => {
+        position.value = new URL(`../assets/sitting.png`, import.meta.url).href;
+    },4000)
+}     */
 
 </script>
 <template>
@@ -37,9 +67,10 @@ function catchFish(){
             <div class="ident">               
             <img :src= "caughtFish.img"/>
             </div> 
-            <div>
-                <img src="@/assets/images/catching.png"/>
-            </div>
+            
+        </div>
+        <div class="fisherman">
+        <img :src = "position"/>
         </div>
     </div>
     
@@ -67,16 +98,21 @@ function catchFish(){
     font-size: 50px;
 }
 .info{
-    padding-left: 10vw;
+    padding-left: 6vw;
     justify-self: center;
-    font-size: 27px;
+    font-size: 100%;
     
 }
 img {
-    width: 650px;
-    height: 325px;
+    width: 100%;
+    height: 100%;
 }
 .ident{
-    padding-left: 15vw;
+    padding-left: 10vw;
+}
+.fisherman{
+    width: 90%;
+    height: 55%;
+    margin-top: 6%;
 }
 </style>
