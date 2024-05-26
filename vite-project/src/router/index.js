@@ -4,7 +4,9 @@ import MapSelect from '@/views/MapSelect.vue'
 import FreshWater from '@/views/FreshWater.vue'
 import InShore from '@/views/InShore.vue'
 import OffShore from '@/views/OffShore.vue'
-
+function requireAuth(){
+  const { data, error } = await supabase.auth.getSession()
+}
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -16,9 +18,6 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/SignIn.vue'),
     },
     {
@@ -44,5 +43,25 @@ const router = createRouter({
 
   ]
 })
-
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (localStorage.getItem("userToken") == null) {
+      next({
+        path: "/login",
+        params: { nextUrl: to.fullPath },
+      });
+    } else {
+      if (!store.state.isAuthenticated) {
+        next({
+          path: "/login",
+          params: { nextUrl: to.fullPath },
+        });
+      } else {
+        next();
+      }
+    }
+  } else {
+    next();
+  }
+});
 export default router

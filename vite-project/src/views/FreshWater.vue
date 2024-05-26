@@ -17,10 +17,10 @@ const freshwater_array = [
 ];
 const likelihoods = {
 'Extremely Rare': 1,
-'Very Rare': 2,
-'Rare': 3,
-'Uncommon': 4,
-'Common': 5,
+'Very Rare': 5,
+'Rare': 20,
+'Uncommon': 40,
+'Common': 80,
 }
 const caughtFish = ref({})
 const position = ref()
@@ -35,6 +35,7 @@ function catchFish(){
 threshold -= likelihoods[fish.rarity];
 if (threshold < 0) {
     caughtFish.value = fish;
+    break
 }
 }
     position.value = new URL(`../assets/catching.png`, import.meta.url).href;
