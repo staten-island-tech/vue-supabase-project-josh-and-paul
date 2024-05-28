@@ -28,8 +28,6 @@ position.value = new URL(`../assets/sitting.png`, import.meta.url).href;
 function catchFish(){
     let total = freshwater_array.reduce((acc, fish) => acc + likelihoods[fish.rarity], 0);
     let threshold = Math.random() * total;
-    /* const randomIndex = Math.floor(Math.random() * freshwater_array.length); 
-    const randomFish = freshwater_array[randomIndex];  */
     for (let fish of freshwater_array) {
 
 threshold -= likelihoods[fish.rarity];
@@ -43,16 +41,6 @@ if (threshold < 0) {
         position.value = new URL(`../assets/sitting.png`, import.meta.url).href;
     },4000)
 }
-/* function catchFish(){
-    const randomIndex = Math.floor(Math.random() * freshwater_array.length); 
-    const randomFish = freshwater_array[randomIndex]; 
-    caughtFish.value = randomFish;
-    position.value = new URL(`../assets/catching.png`, import.meta.url).href;
-    setTimeout(() => {
-        position.value = new URL(`../assets/sitting.png`, import.meta.url).href;
-    },4000)
-}     */
-
 </script>
 <template>
     <div class="location1">

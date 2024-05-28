@@ -4,9 +4,9 @@ import MapSelect from '@/views/MapSelect.vue'
 import FreshWater from '@/views/FreshWater.vue'
 import InShore from '@/views/InShore.vue'
 import OffShore from '@/views/OffShore.vue'
-function requireAuth(){
+/* function requireAuth(){
   const { data, error } = await supabase.auth.getSession()
-}
+} */
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
