@@ -57,6 +57,7 @@ if (threshold < 0) {
             <img :src= "caughtFish.img"/>
             </div> 
             
+            
         </div>
         <div class="fisherman">
         <img :src = "position"/>
