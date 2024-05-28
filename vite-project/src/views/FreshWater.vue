@@ -46,6 +46,7 @@ if (threshold < 0) {
     <div class="location1">
         <RouterLink class="backto" to="/map">Back to Map</RouterLink>
         <div class="interface">        
+            
             <button class="catch" @click="catchFish">Catch Fish</button>
             <div class="info">
                 <h2>Species: {{ caughtFish.species }}</h2>
