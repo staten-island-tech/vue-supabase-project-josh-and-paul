@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { defineStore } from 'pinia'
 
 export const useStore = defineStore('storeId', {
@@ -25,3 +26,16 @@ export const useStore = defineStore('storeId', {
       }
     },
   }) */
+=======
+import { ref } from 'vue'
+import { defineStore } from 'pinia'
+
+export const CartStore = defineStore('cart', () => {
+  const cart = ref([])
+
+  function addtocart(addedfishingproduct) {
+    cart.value.push(addedfishingproduct)
+  }
+  return { cart, addtocart }
+})
+>>>>>>> Stashed changes
