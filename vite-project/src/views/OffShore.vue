@@ -43,7 +43,7 @@ if (threshold < 0) {
 }
 </script>
 <template>
-    <div class="location3">
+    <div class="location2">
         <RouterLink class="backto" to="/map">Back to Map</RouterLink>
         <div class="interface">        
             <button class="catch" @click="catchFish">Catch Fish</button>
