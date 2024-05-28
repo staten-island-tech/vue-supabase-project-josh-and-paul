@@ -65,7 +65,7 @@ if (threshold < 0) {
     
 </template>
 <style>
-.location1{
+.location2{
     width: 100vw;
     height: 97vh;
     object-fit: contain;
