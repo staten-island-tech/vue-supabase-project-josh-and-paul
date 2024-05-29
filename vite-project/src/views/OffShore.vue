@@ -1,6 +1,5 @@
 <script setup>
 import {ref} from 'vue';
-import { RouterLink} from 'vue-router';
 const offshore_array = [
     {"species": "Largemouth Bass", "rarity": "Common", "weight": 10.5, "value": 15.0, img:"https://assets.website-files.com/601c38060e6528a8583f45e5/631f988440efd8efd28e0a36_Largemouth%20Bass.png"},
     {"species": "Smallmouth Bass", "rarity": "Common", "weight": 8.4, "value": 12.0, img:"https://th.bing.com/th/id/R.00f8b58379755076d13a387ed7adb33c?rik=cRZFVTCh88o5Hw&pid=ImgRaw&r=0&sres=1&sresct=1"},
@@ -44,7 +43,6 @@ if (threshold < 0) {
 </script>
 <template>
     <div class="location3">
-        <RouterLink class="backto" to="/map">Back to Map</RouterLink>
         <div class="interface">        
             <button class="catch" @click="catchFish">Catch Fish</button>
             <div class="info">
