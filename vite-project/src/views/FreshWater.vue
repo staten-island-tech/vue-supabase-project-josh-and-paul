@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from 'vue';
 const freshwater_array = [
+    {"species": "Boot", "rarity": "Extremely Rare", "Weight": 2.0 , "value": 0.0, img:"https://pngimg.com/uploads/boots/boots_PNG7782.png"},
     {"species": "Largemouth Bass", "rarity": "Common", "weight": 10.5, "value": 15.0, img:"https://assets.website-files.com/601c38060e6528a8583f45e5/631f988440efd8efd28e0a36_Largemouth%20Bass.png"},
     {"species": "Smallmouth Bass", "rarity": "Common", "weight": 8.4, "value": 12.0, img:"https://th.bing.com/th/id/R.00f8b58379755076d13a387ed7adb33c?rik=cRZFVTCh88o5Hw&pid=ImgRaw&r=0&sres=1&sresct=1"},
     {"species": "Bluegill", "rarity": "Common", "weight": 1.1, "value": 2.0, img:"https://th.bing.com/th/id/OIP.6IT51qrsTZjSSzk8ZbcJaAHaEh?rs=1&pid=ImgDetMain"},
