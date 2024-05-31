@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from 'vue';
 const offshore_array = [
-{"species": "Grouper", "rarity": "Extremely Rare", "weight": 800, "value": 9600.0, img:"https://datakritter.com/img/Goliath-Grouper.png"},
+{"species": "Summer Flounder", "rarity": "Common", "weight": 6, "value": 11.0, img:"https://vignette.wikia.nocookie.net/leapfrog/images/5/56/Summer-flounder.png/revision/latest?cb=20170823004151"},
 {"species": "Grouper", "rarity": "Extremely Rare", "weight": 800, "value": 9600.0, img:"https://datakritter.com/img/Goliath-Grouper.png"},
 {"species": "Grouper", "rarity": "Extremely Rare", "weight": 800, "value": 9600.0, img:"https://datakritter.com/img/Goliath-Grouper.png"},
 {"species": "Grouper", "rarity": "Extremely Rare", "weight": 800, "value": 9600.0, img:"https://datakritter.com/img/Goliath-Grouper.png"},
