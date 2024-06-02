@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useStore } from '@/stores/store'
 import HomeView from '../views/SignUp.vue'
 import MapSelect from '@/views/MapSelect.vue'
 import FreshWater from '@/views/FreshWater.vue'
@@ -23,45 +24,38 @@ const router = createRouter({
     {
       path: '/map',
       name: 'map',
-      component: MapSelect
+      component: MapSelect,
+      meta: {requiresAuth: true},
     },
     {
       path: '/freshwater',
       name: 'freshwater',
       component: FreshWater,
+      meta: {requiresAuth: true},
     },
     {
       path: '/inshore',
       name: 'inshore',
       component: InShore,
+      meta: {requiresAuth: true},
+
     },
     {
       path: '/offshore',
       name: 'offshore',
       component: OffShore,
+      meta: {requiresAuth: true},
     },
 
   ]
 })
 router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-    if (localStorage.getItem("userToken") == null) {
-      next({
-        path: "/login",
-        params: { nextUrl: to.fullPath },
-      });
-    } else {
-      if (!store.state.isAuthenticated) {
-        next({
-          path: "/login",
-          params: { nextUrl: to.fullPath },
-        });
-      } else {
-        next();
-      }
-    }
+
+  const store = useStore();
+  if (to.meta.requiresAuth && !store.isAuthenticated) {
+    next({ name: 'about' })
   } else {
-    next();
+    next()
   }
 });
 export default router
