@@ -42,6 +42,7 @@ onMounted(() => {
         <RouterLink to="/home">Sign-Up</RouterLink>
         <RouterLink to="/about">Sign-In</RouterLink>
         <RouterLink to="/map">Locations</RouterLink>
+        <RouterLink to="/profile">Your Profile</RouterLink>
         <button @click="signOut">Sign Out</button>
       </nav>
     </div>

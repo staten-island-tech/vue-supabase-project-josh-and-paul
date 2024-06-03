@@ -17,8 +17,9 @@ async function signUp() {
 </script>
 
 <template>
-  <div>
-      <h1>SignUp Page</h1>
+  <div class="body">
+    <h1>Fishing Simulator</h1>
+      <h2>SignUp Page</h2>
       <form @submit.prevent="signUp">
         <input
           class="inputField"
@@ -40,3 +41,10 @@ async function signUp() {
       </p>
     </div>
 </template>
+<style>
+.body{
+  background-color: lightblue;
+  width: 100vw;
+  height: 97vh;
+}
+</style>

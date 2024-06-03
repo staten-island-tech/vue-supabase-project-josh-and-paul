@@ -1,5 +1,8 @@
 <script setup>
 import {ref} from 'vue';
+import { supabase } from '../lib/supabaseClient';
+import { useStore } from '@/stores/store';
+const store = useStore();
 const offshore_array = [
 {"species": "Summer Flounder", "rarity": "Common", "weight": 6, "value": 11.0, img:"https://vignette.wikia.nocookie.net/leapfrog/images/5/56/Summer-flounder.png/revision/latest?cb=20170823004151"},
 {"species": "Striped Bass", "rarity": "Common", "weight": 10, "value": 15.0, img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.chartingnature.com%2Fen-ca%2Fproducts%2Fstripped-bass-image&psig=AOvVaw0iO0X5NH7FM0vPPRo6BSyE&ust=1717464664475000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNC6g8ykvoYDFQAAAAAdAAAAABAU"},
@@ -21,7 +24,7 @@ const likelihoods = {
 const caughtFish = ref({})
 const position = ref()
 position.value = new URL(`../assets/sitting.png`, import.meta.url).href;
-function catchFish(){
+async function catchFish(){
     let total = offshore_array.reduce((acc, fish) => acc + likelihoods[fish.rarity], 0);
     let threshold = Math.random() * total;
     for (let fish of offshore_array) {
@@ -29,7 +32,19 @@ function catchFish(){
 threshold -= likelihoods[fish.rarity];
 if (threshold < 0) {
     caughtFish.value = fish;
+    const { data, error } = await supabase
+
+  .from('profiles')
+  .select('fish_caught')
+  .match({ email: store.email })
+  console.log( data, error )
+  const { error: updateError } = await supabase
+  .from('profiles')
+  .update({ fish_caught: [...data[0].fish_caught, fish] })
+  .eq('email', store.email)
+  console.log(updateError)
     break
+    
 }
 }
     position.value = new URL(`../assets/catching.png`, import.meta.url).href;
