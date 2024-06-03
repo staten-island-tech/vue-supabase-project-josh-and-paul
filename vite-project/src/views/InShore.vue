@@ -1,5 +1,8 @@
 <script setup>
 import {ref} from 'vue';
+import { supabase } from '../lib/supabaseClient';
+import { useStore } from '@/stores/store';
+const store = useStore();
 const inshore_array = [
   {"species": "Atlantic Cod", "rarity": "Rare", "weight": 25.0, "value": 45.0, img:"https://www.pngmart.com/files/22/Atlantic-Cod-PNG-Transparent.png"},
   {"species": "Bluefish", "rarity": "Common", "weight": 14.0, "value": 15.0, img:"https://www.seafoodwatch.org/globalassets/sfw-data-blocks/species/bluefish/bluefish.png"},
@@ -21,7 +24,7 @@ const likelihoods = {
 const caughtFish = ref({})
 const position = ref()
 position.value = new URL(`../assets/sitting.png`, import.meta.url).href;
-function catchFish(){
+async function catchFish(){
     let total = inshore_array.reduce((acc, fish) => acc + likelihoods[fish.rarity], 0);
     let threshold = Math.random() * total;
     for (let fish of inshore_array) {
@@ -29,7 +32,19 @@ function catchFish(){
 threshold -= likelihoods[fish.rarity];
 if (threshold < 0) {
     caughtFish.value = fish;
+    const { data, error } = await supabase
+
+  .from('profiles')
+  .select('fish_caught')
+  .match({ email: store.email })
+  console.log( data, error )
+  const { error: updateError } = await supabase
+  .from('profiles')
+  .update({ fish_caught: [...data[0].fish_caught, fish] })
+  .eq('email', store.email)
+  console.log(updateError)
     break
+    
 }
 }
     position.value = new URL(`../assets/catching.png`, import.meta.url).href;
