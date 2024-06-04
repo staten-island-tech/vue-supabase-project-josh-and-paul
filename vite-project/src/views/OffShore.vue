@@ -4,15 +4,14 @@ import { supabase } from '../lib/supabaseClient';
 import { useStore } from '@/stores/store';
 const store = useStore();
 const offshore_array = [
-{"species": "Summer Flounder", "rarity": "Common", "weight": 6, "value": 11.0, img:"https://vignette.wikia.nocookie.net/leapfrog/images/5/56/Summer-flounder.png/revision/latest?cb=20170823004151"},
-{"species": "Striped Bass", "rarity": "Common", "weight": 10, "value": 15.0, img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.chartingnature.com%2Fen-ca%2Fproducts%2Fstripped-bass-image&psig=AOvVaw0iO0X5NH7FM0vPPRo6BSyE&ust=1717464664475000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNC6g8ykvoYDFQAAAAAdAAAAABAU"},
-{"species": "Bluefish", "rarity": "Uncommon", "weight": 5, "value": 8.0, img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.griceconnect.com%2Flocal-news%2Fbluefish-fishery-to-temporarily-close-during-march-april-2024-8328281&psig=AOvVaw35ce_Abcpe9dL3YgELq9ye&ust=1717464704105000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMiCo9-kvoYDFQAAAAAdAAAAABAE"},
-{"species": "Black Sea Bass", "rarity": "Uncommon", "weight": 4, "value": 7.50, img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.chartingnature.com%2Fproducts%2Fblack-sea-bass&psig=AOvVaw0BbeZX8whDhvVjuZ07rHUz&ust=1717464769747000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKju5f-kvoYDFQAAAAAdAAAAABAE"},
-{"species": "Cod", "rarity": "Rare", "weight": 15, "value": 25.0, img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rawpixel.com%2Fsearch%2Fcod%2520fish%2520png&psig=AOvVaw1hamK-j1eOXbMcx_0EktE5&ust=1717464812001000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjsyZOlvoYDFQAAAAAdAAAAABAO"},
-{"species": "Mahi Mahi" , "rarity": "Very Rare", "weight": 40, "value": 70.0, img:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fen%2Fsearch%3Fq%3DMahi-mahi&psig=AOvVaw0onvvNw5_4O2q3esEnLDPf&ust=1717465169489000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPjU98CmvoYDFQAAAAAdAAAAABAE"},
-{"species": "Sword Fish", "rarity": "Extremely Rare", "weight": 1430, "value": 17160.0, img:"https://pngimg.com/uploads/swordfish/swordfish_PNG3.png"},
+{"species": "Sting Ray", "rarity": "Common", "weight": 20, "value": 25.0, img:"https://pngimg.com/d/stingray_PNG1.png"},
+{"species": "Black Sea Bass", "rarity": "Uncommon", "weight": 4, "value": 7.50, img:"https://www.chartingnature.com/cdn/shop/products/2161-black-sea-bass_1080x.png?v=1660934440"},
+{"species": "Cod", "rarity": "Rare", "weight": 15, "value": 25.0, img:"https://www.aller-aqua.com/media/11401/14-cod.png"},
+{"species": "Mahi Mahi" , "rarity": "Very Rare", "weight": 40, "value": 70.0, img:"https://www.seafoodwatch.org/globalassets/sfw-data-blocks/species/dolphinfish/mahi-mahi.png"},
+{"species": "Sword Fish", "rarity": "Extremely Rare", "weight": 1430, "value": 17160.0, img:"https://huntercharters.com/wp-content/themes/yootheme/cache/blue-marlin-ad67f954.jpeg"},
 {"species": "Tuna", "rarity": "Extremely Rare", "weight": 130, "value": 1560.0, img:"https://th.bing.com/th/id/R.077f1fad57d2a666c443fb737c901f05?rik=FVpSY1%2fuhchcIA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-tuna--3500.png&ehk=hd3JnorAqvEy6zne%2fFesQEMiZ6zCkkyI8gyIDvzJQCc%3d&risl=&pid=ImgRaw&r=0"},
 {"species": "Grouper", "rarity": "Extremely Rare", "weight": 800, "value": 9600.0, img:"https://datakritter.com/img/Goliath-Grouper.png"},
+//{"species": "Whalen", "rarity": "Impossible", "weight": , "value": "priceless", img: "../assets/whalen.jpg"},
 ];
 const likelihoods = {
 'Extremely Rare': 1,

@@ -4,11 +4,9 @@ import { supabase } from '../lib/supabaseClient';
 import { useStore } from '@/stores/store';
 const store = useStore();
 const inshore_array = [
-  {"species": "Atlantic Cod", "rarity": "Rare", "weight": 25.0, "value": 45.0, img:"https://www.pngmart.com/files/22/Atlantic-Cod-PNG-Transparent.png"},
   {"species": "Bluefish", "rarity": "Common", "weight": 14.0, "value": 15.0, img:"https://www.seafoodwatch.org/globalassets/sfw-data-blocks/species/bluefish/bluefish.png"},
   {"species": "Striped Bass", "rarity": "Common", "weight": 30.0, "value": 25.0, img:"https://th.bing.com/th/id/OIP.BtNGD3Q6_v0YdB8lW5HUqQHaDG?rs=1&pid=ImgDetMain"},
   {"species": "Flounder", "rarity": "Common", "weight": 5.0, "value": 20.0, img:"https://th.bing.com/th/id/R.31d0e7aa4ac2f503185e02c3738e2e83?rik=udvugaUdoIYODQ&pid=ImgRaw&r=0"},
-  {"species": "Black Sea Bass", "rarity": "Uncommon", "weight": 7.0, "value": 30.0, img:"https://cdn.shopify.com/s/files/1/0058/4269/8358/products/2161-black-sea-bass_700x.png?v=1660934440"},
   {"species": "Tautog", "rarity": "Uncommon", "weight": 9.0, "value": 35.0, img:"https://pngimg.com/uploads/fish/fish_PNG25155.png"},
   {"species": "Summer Flounder", "rarity": "Very Rare", "weight": 8.0, "value": 50.0, img:"https://vignette.wikia.nocookie.net/leapfrog/images/5/56/Summer-flounder.png/revision/latest?cb=20170823004151"},
   {"species": "Atlantic Mackerel", "rarity": "Very Rare", "weight": 2.0, "value": 55.0, img:"https://www.pngplay.com/wp-content/uploads/9/Atlantic-Mackerel-PNG-Images-HD.png"},
