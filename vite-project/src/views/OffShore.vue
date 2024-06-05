@@ -11,7 +11,7 @@ const offshore_array = [
 {"species": "Sword Fish", "rarity": "Extremely Rare", "weight": 1430, "value": 17160.0, img:"https://huntercharters.com/wp-content/themes/yootheme/cache/blue-marlin-ad67f954.jpeg"},
 {"species": "Tuna", "rarity": "Extremely Rare", "weight": 130, "value": 1560.0, img:"https://th.bing.com/th/id/R.077f1fad57d2a666c443fb737c901f05?rik=FVpSY1%2fuhchcIA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-tuna--3500.png&ehk=hd3JnorAqvEy6zne%2fFesQEMiZ6zCkkyI8gyIDvzJQCc%3d&risl=&pid=ImgRaw&r=0"},
 {"species": "Grouper", "rarity": "Extremely Rare", "weight": 800, "value": 9600.0, img:"https://datakritter.com/img/Goliath-Grouper.png"},
-//{"species": "Whalen", "rarity": "Impossible", "weight": , "value": "priceless", img: "../assets/whalen.jpg"},
+{"species": "Whalen", "rarity": "Common", "weight": 1000, "value": "priceless", img: `../assets/whalen.jpg`},
 ];
 const likelihoods = {
 'Extremely Rare': 1,
