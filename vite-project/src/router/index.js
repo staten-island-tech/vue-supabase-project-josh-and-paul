@@ -5,6 +5,7 @@ import MapSelect from '@/views/MapSelect.vue'
 import FreshWater from '@/views/FreshWater.vue'
 import InShore from '@/views/InShore.vue'
 import OffShore from '@/views/OffShore.vue'
+import FishingShop from '@/views/FishingShop.vue'
 // import UserProfile from '@/views/UserProfile.vue'
 /* function requireAuth(){
   const { data, error } = await supabase.auth.getSession()
@@ -47,6 +48,12 @@ const router = createRouter({
       component: OffShore,
       meta: {requiresAuth: true},
     },
+    {
+      path: '/shop',
+      name: 'shop',
+      component: FishingShop,
+      meta: {requiresAuth: true},
+    }
   /*   {
       path: '/profile',
       name: 'profile',

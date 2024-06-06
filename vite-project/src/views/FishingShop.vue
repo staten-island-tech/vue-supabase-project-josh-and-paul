@@ -1,11 +1,11 @@
 <template>
   <div class="fishingshop-container">
   <div v-for="lure in lures" :key="lure.type" class="lure-box">
-  <h1>{{ lure.type }}</h1>
+  <h2>{{ lure.name }}</h2>
   <h2>{{ lure.description }}</h2>
-  <img :src="lure.img"  />
+  <img :src="lure.image"  />
   <h2>{{ lure.price }}</h2>
-  <button id="buttton1" @click = "addaddedcartocart(lure)">Add To Cart</button> 
+ <button id="buttton1" @click = "addLuretocart(lure)">Purchase</button> 
   </div>
     </div>
 </template>
@@ -16,7 +16,7 @@ const lures = [
     name: "Spinnerbait",
     type: "Spinner",
     description: "Spinnerbaits are versatile lures consisting of a metal blade that spins around a wire frame. They mimic small fish or other prey, attracting predatory fish.",
-    image: "https://waypointanglersupply.com/wp-content/uploads/tgsb12ww-220_spinnerbait_coleslaw_sideright.png",
+    image: "https://www.bestbaitforfishing.com/wp-content/uploads/2012/01/Spinnerbait-for-Bass.png",
     price: 9.99
   },
   {
@@ -90,107 +90,59 @@ const lures = [
     price: 4.79
   },
   {
-    name: "Surface Lures",
-    type: "Topwater",
-    description: "Surface lures are designed to float on the water's surface and create a disturbance to attract fish. They are effective for catching species like bass, pike, and muskellunge.",
-    image: "surface_lures.jpg",
-    price: 5.99
-  },
-  {
     name: "Plugs",
     type: "Hard Bait",
     description: "Plugs are hard-bodied lures with a diving lip or bill that creates a diving action when retrieved. They are versatile lures effective for catching a wide range of freshwater and saltwater species.",
-    image: "plugs.jpg",
+    image: "https://cdn.shopify.com/s/files/1/2692/2314/products/HD_Orca_Flying_Fish_175_clipped_rev_1_1800x1800.png?v=1570044098",
     price: 6.99
-  },
-  {
-    name: "Drop Shot Rig",
-    type: "Rig",
-    description: "The drop shot rig is a finesse technique consisting of a weight tied below a hook with a soft plastic lure suspended above the bottom. It is effective for targeting suspended or finicky fish.",
-    image: "drop_shot_rig.jpg",
-    price: 7.29
-  },
-  {
-    name: "Alabama Rig",
-    type: "Rig",
-    description: "The Alabama rig, also known as the umbrella rig, consists of multiple wire arms with swivels to attach lures. It mimics a school of baitfish and is effective for catching bass and other predatory fish.",
-    image: "alabama_rig.jpg",
-    price: 12.99
   },
   {
     name: "Gulp! Alive! Floating Salmon Eggs",
     type: "Soft Plastic",
     description: "Gulp! Alive! Floating Salmon Eggs are soft plastic lures designed to mimic the appearance and texture of real salmon eggs. They are effective for trout fishing and other species that feed on eggs.",
-    image: "gulp_alive_salmon_eggs.jpg",
+    image: "https://www.xxl.se/filespin/26185c9b896c4b1ab1a9c55ee93a3466?resize=722,722&quality=90",
     price: 5.49
-  },
-  {
-    name: "Spoon Lures",
-    type: "Metal",
-    description: "Spoon lures are concave metal lures that flutter and wobble when retrieved. They imitate injured baitfish and are effective for a variety of freshwater and saltwater species.",
-    image: "spoon_lures.jpg",
-    price: 4.99
   },
   {
     name: "Wobbleheads",
     type: "Soft Plastic",
     description: "Wobbleheads are soft plastic lures with a weighted head that creates an erratic wobbling action when retrieved. They are effective for bass fishing, particularly in heavy cover.",
-    image: "wobbleheads.jpg",
+    image: "https://png.pngtree.com/png-clipart/20231016/original/pngtree-wobbler-casting-fish-fishing-picture-image_13170603.png",
     price: 6.79
   },
-  {
-    name: "Shrimp Lures",
-    type: "Soft Plastic",
-    description: "Shrimp lures are soft plastic lures designed to mimic the appearance and movement of shrimp. They are effective for saltwater species like redfish, snook, and trout.",
-    image: "shrimp_lures.jpg",
-    price: 8.49
-  },
-  {
-    name: "Squid Lures",
-    type: "Soft Plastic",
-    description: "Squid lures are soft plastic lures designed to mimic the appearance and movement of squid. They are effective for saltwater species like tuna, mahi-mahi, and billfish.",
-    image: "squid_lures.jpg",
-    price: 9.99
-  },
-  {
-    name: "Frog Lures",
-    type: "Topwater",
-    description: "Frog lures are topwater lures designed to mimic the appearance and movement of frogs. They are effective for bass fishing, particularly in areas with heavy vegetation.",
-    image: "frog_lures.jpg",
-    price: 7.99
-  },
-  {
-    name: "Minnow Lures",
-    type: "Hard Bait",
-    description: "Minnow lures are hard-bodied lures designed to imitate the appearance and swimming action of minnows. They are effective for catching a variety of freshwater and saltwater species.",
-    image: "minnow_lures.jpg",
-    price: 6.49
-  },
-  {
-    name: "Shad Lures",
-    type: "Hard Bait",
-    description: "Shad lures are hard-bodied lures designed to mimic the appearance and swimming action of shad. They are effective for catching bass, walleye, and other predatory fish.",
-    image: "shad_lures.jpg",
-    price: 7.99
-  },
-  {
-    name: "Crawfish Lures",
-    type: "Soft Plastic",
-    description: "Crawfish lures are soft plastic lures designed to mimic the appearance and movement of crawfish. They are effective for bass fishing, particularly in rocky or weedy areas.",
-    image: "crawfish_lures.jpg",
-    price: 5.99
-  },
-  {
-    name: "Maggot Lures",
-    type: "Soft Plastic",
-    description: "Maggot lures are soft plastic lures designed to mimic the appearance and movement of maggots. They are effective for ice fishing and catching panfish like bluegill and perch.",
-    image: "maggot_lures.jpg",
-    price: 3.99
-  }
+{
+ name: "NightCrawler Worms",
+ type: "Live",
+ description: "Classic worms, which are used in freshwater areas.",
+ image: "https://png.pngtree.com/png-vector/20230831/ourmid/pngtree-worm-on-a-fishing-hook-png-image_9966709.png",
+ price: 9.99
+},
+  
 ];
 
+import { CartStore } from '../stores/store';
+let CartSelection = CartStore()
+function addLuretocart(addedLure){
+  CartSelection.addtocart(addedLure)
+}
 </script>
 
 <style lang="scss" scoped>
-
+.fishingshop-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.lure-box{
+  width: calc(33.33% - 20px); 
+  margin-top: 30px;
+  margin-bottom: 20px; 
+  border: 5px solid blue; 
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.lure-box img {
+  width: max-content; 
+  height: 150px; 
+}
 </style>
