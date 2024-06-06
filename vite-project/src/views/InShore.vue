@@ -70,32 +70,32 @@ if (threshold < 0) {
         <img :src = "position"/>
         </div>
     </div>
-    
 </template>
 <style>
 .location2{
     width: 100vw;
-    height: 97vh;
-    object-fit: contain;
+    height: 100vh;
+    object-fit: cover;
     background-image: url("../assets/inshore.png");
-    background-size: 100%;    
+    background-size: cover; 
+    background-repeat: no-repeat; 
 }
 .interface{
-    width: calc(100vw - 4px);
-    height: 30vh;
+    width: 100%;
+    height: 30%;
     background-color: white;
     border: 2px solid black;
-    padding: 20px 30px;    
+    padding: 2% 3%;    
     box-sizing: border-box;
     display: flex;
 }
 .catch{
-    width: 300px;
-    height: 200px;
-    font-size: 50px;
+    width: 30%;
+    height: 20%;
+    font-size: 5%;
 }
 .info{
-    padding-left: 6vw;
+    padding-left: 6%;
     justify-self: center;
     font-size: 100%;
     
@@ -105,11 +105,11 @@ img {
     height: 100%;
 }
 .ident{
-    padding-left: 10vw;
+    padding-left: 10%;
 }
 .fisherman{
     width: 90%;
     height: 55%;
-    margin-top: 6%;
+    margin-top: 7%;
 }
 </style>
