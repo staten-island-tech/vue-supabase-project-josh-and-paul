@@ -46,6 +46,7 @@ if (threshold < 0) {
   .from('profiles')
   .update({ fish_caught: [...data[0].fish_caught, fish] })
   .eq('email', store.email)
+  console.log(store.email)
   console.log(updateError)
     break
     
