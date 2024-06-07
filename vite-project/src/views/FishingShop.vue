@@ -5,7 +5,8 @@
   <h2>{{ lure.description }}</h2>
   <img :src="lure.image"  />
   <h2>{{ lure.price }}</h2>
- <button id="buttton1" @click = "addLuretocart(lure)">Purchase</button> 
+ <button id="buttton1" @click = "purchaseLure(lure)">Purchase</button> 
+
   </div>
     </div>
 </template>
@@ -122,8 +123,8 @@ const lures = [
 
 import { CartStore } from '../stores/store';
 let CartSelection = CartStore()
-function addLuretocart(addedLure){
-  CartSelection.addtocart(addedLure)
+function purchaseLure(addedLure){
+  CartSelection.Purchase(addedLure)
 }
 </script>
 
@@ -145,4 +146,5 @@ function addLuretocart(addedLure){
   width: max-content; 
   height: 150px; 
 }
+
 </style>

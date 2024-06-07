@@ -14,8 +14,8 @@ export const useStore = defineStore('storeId', {
 export const CartStore = defineStore('cart', () => {
   const cart = ref([])
 
-  function addtocart(addedLure){
+  function Purchase(addedLure){
     cart.value.push(addedLure)
   }
-  return { cart, addtocart }
+  return { cart, Purchase }
 })
