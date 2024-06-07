@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <div class="fishingshop-container">
   <div v-for="lure in lures" :key="lure.type" class="lure-box">
   <h2>{{ lure.name }}</h2>
@@ -145,4 +145,4 @@ function addLuretocart(addedLure){
   width: max-content; 
   height: 150px; 
 }
-</style>
+</style>-->
